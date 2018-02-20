@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Visualization | Title of Example</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+
+  <body id="inner">
+
+    <header>
+      <h1>Data Visualization</h1>
+
+      <!--
+        An optional navigation ... you may want to include a link to
+        your personal portfolio, email, etc.
+      -->
+
+<!--
+      <nav>
+        <ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+-->
+
+    </header>
+
+    <main>
+
+      <!--
+        It is not ideal to exclude a menu from inner pages, but the
+        focus is on data visualization, not site design. This
+        'breadcrumb' approach will keep things simple while the
+        site added to week-to-week, but considers the necessity to
+        to swap out the nav on each page (for the completed one on
+        'index.html') and make minor modifications to 'style.css' to
+        create a more robust site nav once all examples are complete.
+      -->
+
+      <nav>
+        <p>&laquo; <a href="index.html">Return home</a></p>
+      </nav>
+
+      <section id="example">
+        <p class="message">You need a browser which supports CSS Grid! Why not <a href="https://browsehappy.com/">download</a> one which does?</p>
+
+        <h2>What Does French Inbound Tourism Look Like Over The Years?</h2>
+
+        <!--
+          Remove #chart and replace it with your HTML which contains
+          the code for your data visualization.
+        -->
+
+        <div id="chart">
+          <p>An example goes here.</p>
+        </div>
+
+      </section>
+
+      <section id="writing">
+          <p>Among all the popular travel destination around th world, France has always remained as the No.1 travel destination over the years despite its recent minor decline in tourism number, beating the other 2 popular destinations -- United States and Spain. </p>
+        
+        <p>A line chart helps reader to see a general trend in tourism number.</p>
+        
+        <p id="source">Source: data.worldbank.org</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><a href="mailto:s.tong1@umiami.edu">Siyuan (Sharry) Tong</a></p>
+      <p>JMM 692: Interactive Data Visualization</p>
+      <p>Spring 2018</p>
+    </footer>
+
+    <!--
+      Include necessary javascript libraries / scripts here (unless
+      noted otherwise; some libraries need to be added in <head>).
+
+      <script href="#"></script>
+    -->
+    
+    <script src="js/flotr2.min.js"></script>
+    <script>
+
+      // statistics are cumulative!
+
+      var french = [
+        // [0, 0]
+        [1, 80.85],
+        [2, 79.22],
+        [3, 76.76],
+        [4, 76.64],
+        [5, 80.49],
+        [6, 81.98],
+        [7, 83.63],
+        [8, 83.70],
+        [9, 84.45],
+        [10, 82.57],
+      ];
+        
+        var us = [
+        // [0, 0]
+        [1, 56.13],
+        [2, 58],
+        [3, 55.10],
+        [4, 60.01],
+        [5, 62.82],
+        [6, 66.66],
+        [7, 69.99],
+        [8, 75.02],
+        [9, 77.46],
+        [10, 75.61],
+      ];
+        
+        var spain = [
+        // [0, 0]
+        [1, 58.67],
+        [2, 57.19],
+        [3, 52.18],
+        [4, 52.68],
+        [5, 56.18],
+        [6, 57.46],
+        [7, 60.67],
+        [8, 64.94],
+        [9, 68.17],
+        [10, 75.31],
+      ];
+        
+        
+      var years = [
+        // [0, 0]
+        [1, 2007],
+        [2, 2008],
+        [3, 2009],
+        [4, 2010],
+        [5, 2011],
+        [6, 2012],
+        [7, 2013],
+        [8, 2014],
+        [9, 2015],
+        [10, 2016],
+      ];
+
+
+
+      window.onload = function () {
+        Flotr.draw(
+          document.getElementById('chart'),
+          [
+            {
+              data: french,
+              lines:{show: true},
+              shadowSize: 0,
+              color: "#695D77",
+              label: "France"
+
+            },
+            
+            {
+              data: us,
+              lines:{show: true},
+              shadowSize: 0,
+              color: "#B86F87",
+              label: "United States"
+
+            },
+              
+            {
+              data: spain,
+              lines:{show: true},
+              shadowSize: 0,
+              color: "#E57981",
+              label: "Spain"
+
+            }
+          ],
+          {
+            // HtmlText: false,
+            yaxis: {
+              min: 40,
+              max: 90,
+              tickDecimals: 0,
+              title:"millions",
+            },
+            xaxis: {
+              ticks: years,
+              tickDecimals: 0,
+              title:"years",
+
+            },
+            grid: {
+              outlineWidth: 0,
+              verticalLines: 0
+            }
+
+          }
+
+        )
+      }
+    </script>
+
+  </body>
+</html>
