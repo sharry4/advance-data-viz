@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Visualization | Title of Example</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+
+  <body id="inner">
+
+    <header>
+      <h1>Data Visualization</h1>
+
+      <!--
+        An optional navigation ... you may want to include a link to
+        your personal portfolio, email, etc.
+      -->
+
+      <!-- <nav>
+        <ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav> -->
+
+    </header>
+
+    <main>
+
+      <!--
+        It is not ideal to exclude a menu from inner pages, but the
+        focus is on data visualization, not site design. This
+        'breadcrumb' approach will keep things simple while the
+        site added to week-to-week, but considers the necessity to
+        to swap out the nav on each page (for the completed one on
+        'index.html') and make minor modifications to 'style.css' to
+        create a more robust site nav once all examples are complete.
+      -->
+
+      <nav>
+        <p>&laquo; <a href="index.html">Return home</a></p>
+      </nav>
+
+      <section id="example">
+        <p class="message">You need a browser which supports CSS Grid! Why not <a href="https://browsehappy.com/">download</a> one which does?</p>
+
+        <h2>Which Country Is The Most Popular Travel Destination Around The World?</h2>
+
+        <!--
+          Remove #chart and replace it with your HTML which contains
+          the code for your data visualization.
+        -->
+
+        <div id="chart">
+          <p>An example goes here.</p>
+        </div>
+        <div id="controls">
+          <p>Select countries to include:</p>
+          <form></form>
+        </div>
+
+      </section>
+
+      <section id="writing">
+        <p>Among all the popular travel destinations around the world, France has always remained as the top choice among the travelers over the years despite its recent minor decline in tourism number. Other popular destinations besides France are Spain, United States, China and Italy.</p>
+
+        <p id="source">Source: data.worldbank.org</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><a href="mailto:s.tong1@umiami.edu">Siyuan (Sharry) Tong</a></p>
+      <p>JMM 692: Interactive Data Visualization</p>
+      <p>Spring 2018</p>
+    </footer>
+
+    <!--
+      Include necessary javascript libraries / scripts here (unless
+      noted otherwise; some libraries need to be added in <head>).
+
+      <script href="#"></script>
+    -->
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.flot.min.js"></script>
+
+    <script>
+
+      $(function() {
+
+        var french = [[1995, 60.03],[1996, 62.41],[1997, 66.59],[1998, 70.11],[1999, 73.14], [2000, 77.19], [2001, 75.20], [2002, 77.01], [2003, 75.05], [2004, 74.43],[2005, 74.99], [2006, 77.92], [2007, 80.85],[2008, 79.22],[2009, 76.76],[2010, 76.64],[2011, 80.49],[2012, 81.98],[2013, 83.63],[2014, 83.70],[2015, 84.45],[2016, 82.57]];
+
+        var us = [[1995, 43.32],[1996, 46.49],[1997, 47.77],[1998, 46.38],[1999, 48.51], [2000, 51.24], [2001, 46.92], [2002, 43.58], [2003, 41.22], [2004, 46.09],[2005, 49.21], [2006, 50.98], [2007, 56.13],[2008, 58],[2009, 55.10],[2010, 60.01],[2011, 62.82],[2012, 66.66],[2013, 69.99],[2014, 75.02],[2015, 77.46],[2016, 75.61]];
+
+        var spain = [[1995, 32.97],[1996, 34.03],[1997, 39.55],[1998, 41.89],[1999, 45.44], [2000, 46.40], [2001, 48.56], [2002, 50.33], [2003, 50.85], [2004, 52.43],[2005, 55.91], [2006, 58.00], [2007, 58.67],[2008, 57.19],[2009, 52.18],[2010, 52.68],[2011, 56.18],[2012, 57.46],[2013, 60.67],[2014, 64.94],[2015, 68.17],[2016, 75.31]];
+
+        var china = [[1995, 20.03],[1996, 22.76],[1997, 23.77],[1998, 25.07],[1999, 27.05], [2000, 31.23], [2001, 33.17], [2002, 36.80], [2003, 32.97], [2004, 41.76],[2005, 46.81], [2006, 49.91], [2007, 54.72],[2008, 53.05],[2009, 50.87],[2010, 55.66],[2011, 57.81],[2012, 57.72],[2013, 55.69],[2014, 55.62],[2015, 56.89],[2016, 59.27]];
+
+        var italy = [[1995, 31.05],[1996, 32.94],[1997, 34.69],[1998, 34.93],[1999, 36.52], [2000, 41.18], [2001, 39.56], [2002, 39.80], [2003, 39.60], [2004, 37.07],[2005, 36.51], [2006, 41.06], [2007, 43.65],[2008, 42.73],[2009, 43.24],[2010, 43.63],[2011, 46.12],[2012, 46.36],[2013, 47.70],[2014, 48.58],[2015, 50.73],[2016, 52.37]];
+
+        var source = [
+          {
+            data: french,
+            show: true,
+            color: "#3E5D7B",
+            label: "France"
+          },
+          {
+            data: us,
+            show: true,
+            color: "#695D77",
+            label: "United States"
+          },
+          {
+            data: spain,
+            show: true,
+            color: "#B86F87",
+            label: "Spain"
+          },
+          {
+            data: china,
+            show: true,
+            color: "#E57981",
+            label: "China",
+          },
+          {
+            data: italy,
+            show: true,
+            color: "#EFB49B",
+            label: "Italy"
+          }
+        ];
+
+        // Draw the chart
+
+        var plotObj = $.plot($("#chart"),
+          $.map(
+            $.grep(source, function(obj) {return obj.show}),
+            // find (source,pattern)
+            function(obj) {return {data:obj.data, color:obj.color}}
+            //creates modified array
+          )
+        );
+
+
+        // var newArray = $.map(
+        //   $.grep(source, function(obj) {return obj.show}),
+        //   // find (source,pattern)
+        //   function(obj) {return {data:obj.data, color:obj.color}}
+        //   //creates modified array
+        // );
+        //
+        // console.log(newArray)
+
+
+
+        //create user controls
+        $.each(source, function(index, region){
+          var input = $("<input>").attr("type", "checkbox").attr("id","chk-" + index);
+
+          if(region.show) {
+            $(input).prop("checked", true);
+          }
+
+          var span = $("<span>").css({
+            "background-color": region.color
+          });
+
+          var label = $("<label>").append(input).append(span).append(region.label);
+
+          $("#controls form").append(label)
+        });
+
+
+        // Add interaction
+        $("input").click( function(event) {
+          index = event.target.id.substr(4);
+          source[index].show = !source[index].show;
+
+          $.map(source, function(obj){
+            return {data: obj.data, color: obj.color}
+          });
+
+
+          // reset data
+          plotObj.setData(
+            $.map(
+              $.grep(source, function(obj) {return obj.show}),
+              // find (source,pattern)
+              function(obj) {return {data:obj.data, color:obj.color}}
+              //creates modified array
+            )
+          );
+
+          // redraw charset
+          plotObj.draw();
+        });
+
+
+
+
+
+
+
+      });
+    </script>
+
+  </body>
+</html>

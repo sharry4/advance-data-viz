@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Visualization | Title of Example</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+
+  <body id="inner">
+
+    <header>
+      <h1>Data Visualization</h1>
+
+      <!--
+        An optional navigation ... you may want to include a link to
+        your personal portfolio, email, etc.
+      -->
+
+<!--
+      <nav>
+        <ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+-->
+
+    </header>
+
+    <main>
+
+      <!--
+        It is not ideal to exclude a menu from inner pages, but the
+        focus is on data visualization, not site design. This
+        'breadcrumb' approach will keep things simple while the
+        site added to week-to-week, but considers the necessity to
+        to swap out the nav on each page (for the completed one on
+        'index.html') and make minor modifications to 'style.css' to
+        create a more robust site nav once all examples are complete.
+      -->
+
+      <nav>
+        <p>&laquo; <a href="index.html">Return home</a></p>
+      </nav>
+
+      <section id="example">
+        <p class="message">You need a browser which supports CSS Grid! Why not <a href="https://browsehappy.com/">download</a> one which does?</p>
+
+        <h2>Does Inbound Tourism Number Has Anything To Do With GDP?</h2>
+
+        <!--
+          Remove #chart and replace it with your HTML which contains
+          the code for your data visualization.
+        -->
+
+        <div id="chart"></div>
+
+      </section>
+
+      <section id="writing">
+        <p>What are some of the possible factors influnces inbound tourism number? Could country GDP be one of them? For some of the most popular travel destinaitons, as the scatter plot shows, there seems to be some correlation between a country's GDP and its popularity as a travel destination.</p>
+        
+        <p id="source">Source: <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=US-CN-FR&year_high_desc=true">World bank data on inbound tourism</a>, <a href="https://data.worldbank.org/indicator/ST.INT.ARVL?locations=FR&year_high_desc=true">World bank data on GDP</a></p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><a href="mailto:s.tong1@umiami.edu">Siyuan (Sharry) Tong</a></p>
+      <p>JMM 692: Interactive Data Visualization</p>
+      <p>Spring 2018</p>
+    </footer>
+
+    <!--
+      Include necessary javascript libraries / scripts here (unless
+      noted otherwise; some libraries need to be added in <head>).
+
+      <script href="#"></script>
+    -->
+    
+    <script src="js/flotr2.min.js"></script>
+    <script src="js/underscore.min.js"></script>
+    <script>
+
+    //var country = [[GDP in trillion, arrival in million]]
+      var france  = [[2.46, 82.57]];
+      var us    = [[18.62, 75.61]];
+      var spain = [[1.24, 75.31]];
+      var china    = [[11.2, 59.27]];
+      var italy    = [[1.86, 52.37]];
+
+
+      window.onload = function() {
+        Flotr.draw(
+          document.getElementById("chart"),
+          [
+            {
+              data: france,
+              label: "France",
+              points: {show: true},
+              color: "#3E5D7B"
+            },
+            {
+              data: us,
+              label: "United States",
+              points: {show: true},
+              color: "#695D77"
+            },
+            {
+              data: spain,
+              label: "Spain",
+              points: {show: true},
+              color: "#B86F87"
+            },
+            {
+              data: china,
+              label: "China",
+              points: {show: true},
+              color: "#E57981"
+            },
+            {
+              data: italy,
+              label: "Italy",
+              points: {show: true},
+              color: "#EFB49B"
+            }
+          ],
+          {
+            HtmlText: false,
+            title: "Inbound Tourism Number vs. GDP",
+            xaxis:{
+              min: 1,
+              max: 20,
+              tickDecimals: 0,
+              title: "GDP in trillions"
+            },
+            yaxis: {
+              min: 50,
+              max: 85,
+              tickDecimals: 0,
+              title: "Inbound Arrival Number in Millions"
+            },
+            legend: {
+              position : 'se'  // Position the legend 'south-ea
+            }
+              
+
+          }
+        )
+      }
+
+    </script>
+
+  </body>
+</html>

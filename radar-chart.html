@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Visualization | Title of Example</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+
+  <body id="inner">
+
+    <header>
+      <h1>Data Visualization</h1>
+
+      <!--
+        An optional navigation ... you may want to include a link to
+        your personal portfolio, email, etc.
+      -->
+
+<!--
+      <nav>
+        <ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+-->
+
+    </header>
+
+    <main>
+
+      <!--
+        It is not ideal to exclude a menu from inner pages, but the
+        focus is on data visualization, not site design. This
+        'breadcrumb' approach will keep things simple while the
+        site added to week-to-week, but considers the necessity to
+        to swap out the nav on each page (for the completed one on
+        'index.html') and make minor modifications to 'style.css' to
+        create a more robust site nav once all examples are complete.
+      -->
+
+      <nav>
+        <p>&laquo; <a href="index.html">Return home</a></p>
+      </nav>
+
+      <section id="example">
+        <p class="message">You need a browser which supports CSS Grid! Why not <a href="https://browsehappy.com/">download</a> one which does?</p>
+
+        <h2>Where Does Inbound Foreign Tourists in France Coming From? </h2>
+
+        <!--
+          Remove #chart and replace it with your HTML which contains
+          the code for your data visualization.
+        -->
+
+        <div id="chart">
+          <p>An example goes here.</p>
+        </div>
+
+      </section>
+
+      <section id="writing">
+        <p>Among all the Inbound Foreign visitors in France during the year of 2016, if divided by continent of residence, most of them are from Europe, followed by America.</p>
+        
+        <p id="source">Source: <a href="https://www.statista.com/statistics/455275/number-of-inbound-tourist-arrivals-in-france-by-continent/">statista.com</a></p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><a href="mailto:s.tong1@umiami.edu">Siyuan (Sharry) Tong</a></p>
+      <p>JMM 692: Interactive Data Visualization</p>
+      <p>Spring 2018</p>
+    </footer>
+
+    <!--
+      Include necessary javascript libraries / scripts here (unless
+      noted otherwise; some libraries need to be added in <head>).
+
+      <script href="#"></script>
+    -->
+    
+    
+    <script src="js/flotr2.min.js"></script>
+    <script>
+
+    //Number of inbound foreign tourist arrivals in France in 2016, by continent of residence (in millions)
+    var countries = [
+      {
+        country: "france",
+        europe: 64.5,
+        america: 8.1,
+        asia: 5.7,
+        oceania: 1.2,
+        africa: 3.1
+      }
+    ]
+    // We accumulate a sum of player data so we have something to
+    // compare each player to.
+    var team = {
+      europe: 64.5,
+      america: 8.1,
+      asia: 5.7,
+      oceania: 1.2,
+      africa: 3.1
+    }
+    // Our labels define each point on the radar. This is similar to
+    // how we map the index of a bar chart to a label.
+    var labels = [
+      [0, "Europe"],
+      [1, "America"],
+      [2, "Asia"],
+      [3, "Oceania"],
+      [4, "Africa"]
+    ];
+
+
+    var getCountry = function(country) {
+      for (i = 0; i < countries.length; i++) {
+        if (countries[i].country === country) return countries[i];
+      }
+    }
+    // The playerData function uses the team object as a foundation
+    // for the keys we want to collect from each player.
+    var countryData = function(country) {
+      var obj = {};
+      var i = 0;
+      obj.label = country;
+      obj.data = [];
+      for (var key in team) {
+        obj.data.push([i, getCountry(country)[key]]);
+        i++;
+      }
+      return obj;
+    }
+
+
+    window.onload = function() {
+      Flotr.draw(
+        document.getElementById("chart"),
+        [
+          countryData("france")
+        ],
+        {
+          colors: ["#3E5D7B"],
+          title: "Number of inbound foreign tourist arrivals in France in 2016, by continent of residence (in millions)",
+          radar: { 
+              show: true,
+              fillOpacity:1,
+          }, 
+          grid: { circular: true },
+          xaxis: { ticks: labels },
+          yaxis: {
+            showLabels: false,
+            min: 0,
+            max: 70
+          }
+        }
+      );
+    }
+
+    </script>
+
+  </body>
+</html>
