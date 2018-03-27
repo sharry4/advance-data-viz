@@ -199,10 +199,10 @@ footer p:last-child:after {
 */
 
 #chart {
-  background-color: #eee;
-  border: 1px dotted #ccc;
+  /* background-color: #eee; */
+  /* border: 1px dotted #ccc; */
   width: 700px;
-  height: 400px;
+  height: 500px;
   padding-left: 1rem;
   margin-right: 10px;
 }
@@ -242,4 +242,27 @@ label > span {
   height: 0.7rem;
   width: 0.7rem;
   margin: 0 0.25rem;
+}
+
+/* for choropleth map */
+
+/* .st0 {
+  fill:#808080;
+  stroke:#FFFFFF;
+  stroke-width:0.7316;
+}
+.st1 {
+  fill:#B3B4C1;
+  stroke:#B3B3B3;
+  stroke-width:0.3441;
+} */
+
+svg {
+  max-width: 90%;
+}
+
+path {
+  fill: #dddddd;
+  stroke:#FFFFFF;
+  stroke-width:0.7316;
 }
