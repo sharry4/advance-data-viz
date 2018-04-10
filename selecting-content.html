@@ -134,7 +134,6 @@
           }
         ];
 
-        // Draw the chart
 
         var plotObj = $.plot($("#chart"),
           $.map(
@@ -149,18 +148,8 @@
         );
 
 
-        // var newArray = $.map(
-        //   $.grep(source, function(obj) {return obj.show}),
-        //   // find (source,pattern)
-        //   function(obj) {return {data:obj.data, color:obj.color}}
-        //   //creates modified array
-        // );
-        //
-        // console.log(newArray)
 
-
-
-        //create user controls
+        // user controls
         $.each(source, function(index, region){
           var input = $("<input>").attr("type", "checkbox").attr("id","chk-" + index);
 

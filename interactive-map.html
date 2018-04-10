@@ -72,12 +72,7 @@
       <p>Spring 2018</p>
     </footer>
 
-    <!--
-      Include necessary javascript libraries / scripts here (unless
-      noted otherwise; some libraries need to be added in <head>).
-
-      <script href="#"></script>
-    -->
+    
     <script src="js/leaflet.js"></script>
     <script>
       var umMap = L.map("chart").setView([25.71912,-80.27983], 15);
@@ -88,7 +83,9 @@
         attribution: "&copy; <a href='http://openstreetmap.com/copyright'>OpenSreetMap</a>"
       }).addTo(umMap);
 
-      var cSchool =   L.circle([25.72236, -80.27588],{
+      var cSchool =   L.circle(
+        [25.72236, -80.27588],
+        {
         //fill color, opacity...
           color: "#F47321",
           fillColor: "#F47321",
