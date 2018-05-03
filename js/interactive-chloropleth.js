@@ -90,12 +90,12 @@ var legend = L.control({position: 'bottomright'});
 legend.onAdd = function(map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-        teams = [1, 2, 3, 4, 5, 7];
+        heritages = [1, 2, 3, 4, 5, 7];
 
-    for (var i = 0; i < teams.length; i++) {
+    for (var i = 0; i < heritages.length; i++) {
       div.innerHTML +=
-        "<span style='background:" + addColor(teams[i] + 1) + "'></span> " +
-        teams[i] + "<br>";
+        "<span style='background:" + addColor(heritages[i] + 1) + "'></span> " +
+        heritages[i] + "<br>";
     }
 
     return div;
