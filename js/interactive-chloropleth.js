@@ -90,7 +90,7 @@ var legend = L.control({position: 'bottomright'});
 legend.onAdd = function(map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-        teams = [1, 2, 3, 4, 5, 6];
+        teams = [1, 2, 3, 4, 5, 7];
 
     for (var i = 0; i < teams.length; i++) {
       div.innerHTML +=
