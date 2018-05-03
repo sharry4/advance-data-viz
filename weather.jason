@@ -1,0 +1,277 @@
+{
+    "@context":
+    [
+        "https://raw.githubusercontent.com/geojson/geojson-ld/master/contexts/geojson-base.jsonld",
+        {
+            "wx": "https://api.weather.gov/ontology#",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "unit": "http://codes.wmo.int/common/unit/",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "GeometryCollection",
+        "geometries":
+        [
+            {
+                "type": "Point",
+                "coordinates": [
+                    -80.265930246313,
+                    25.744270526105
+                ]
+            },
+            {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -80.277163282548,
+                            25.756860188525
+                        ],
+                        [
+                            -80.279910954036,
+                            25.734157761054
+                        ],
+                        [
+                            -80.254699526069,
+                            25.73167998947
+                        ],
+                        [
+                            -80.251947222998,
+                            25.75438196906
+                        ],
+                        [
+                            -80.277163282548,
+                            25.756860188525
+                        ]
+                    ]
+                ]
+            }
+        ]
+    },
+    "properties": {
+        "updated": "2018-05-01T17:31:28+00:00",
+        "units": "us",
+        "forecastGenerator": "BaselineForecastGenerator",
+        "generatedAt": "2018-05-01T17:40:53+00:00",
+        "updateTime": "2018-05-01T17:31:28+00:00",
+        "validTimes": "2018-05-01T11:00:00+00:00/P8DT2H",
+        "elevation": {
+            "value": 2.1336,
+            "unitCode": "unit:m"
+        },
+        "periods": [
+            {
+                "number": 1,
+                "name": "This Afternoon",
+                "startTime": "2018-05-01T13:00:00-04:00",
+                "endTime": "2018-05-01T18:00:00-04:00",
+                "isDaytime": true,
+                "temperature": 82,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "14 mph",
+                "windDirection": "E",
+                "icon": "https://api.weather.gov/icons/land/day/rain_showers,20?size=medium",
+                "shortForecast": "Slight Chance Rain Showers",
+                "detailedForecast": "A slight chance of rain showers. Partly sunny, with a high near 82. East wind around 14 mph, with gusts as high as 18 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
+            },
+            {
+                "number": 2,
+                "name": "Tonight",
+                "startTime": "2018-05-01T18:00:00-04:00",
+                "endTime": "2018-05-02T06:00:00-04:00",
+                "isDaytime": false,
+                "temperature": 73,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "10 to 14 mph",
+                "windDirection": "E",
+                "icon": "https://api.weather.gov/icons/land/night/rain_showers,30/rain_showers,50?size=medium",
+                "shortForecast": "Chance Rain Showers",
+                "detailedForecast": "A chance of rain showers. Mostly cloudy, with a low around 73. East wind 10 to 14 mph, with gusts as high as 18 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible."
+            },
+            {
+                "number": 3,
+                "name": "Wednesday",
+                "startTime": "2018-05-02T06:00:00-04:00",
+                "endTime": "2018-05-02T18:00:00-04:00",
+                "isDaytime": true,
+                "temperature": 82,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "12 to 16 mph",
+                "windDirection": "E",
+                "icon": "https://api.weather.gov/icons/land/day/rain_showers,50/tsra_sct,50?size=medium",
+                "shortForecast": "Chance Rain Showers",
+                "detailedForecast": "A chance of rain showers before 2pm, then a chance of showers and thunderstorms. Mostly cloudy, with a high near 82. East wind 12 to 16 mph, with gusts as high as 21 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible."
+            },
+            {
+                "number": 4,
+                "name": "Wednesday Night",
+                "startTime": "2018-05-02T18:00:00-04:00",
+                "endTime": "2018-05-03T06:00:00-04:00",
+                "isDaytime": false,
+                "temperature": 73,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "12 to 15 mph",
+                "windDirection": "E",
+                "icon": "https://api.weather.gov/icons/land/night/tsra_sct,50/tsra_sct,40?size=medium",
+                "shortForecast": "Chance Showers And Thunderstorms",
+                "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a low around 73. East wind 12 to 15 mph, with gusts as high as 20 mph. Chance of precipitation is 50%."
+            },
+            {
+                "number": 5,
+                "name": "Thursday",
+                "startTime": "2018-05-03T06:00:00-04:00",
+                "endTime": "2018-05-03T18:00:00-04:00",
+                "isDaytime": true,
+                "temperature": 84,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "12 to 15 mph",
+                "windDirection": "E",
+                "icon": "https://api.weather.gov/icons/land/day/rain_showers,30?size=medium",
+                "shortForecast": "Chance Rain Showers",
+                "detailedForecast": "A chance of rain showers before 2pm. Mostly sunny, with a high near 84. East wind 12 to 15 mph, with gusts as high as 20 mph. Chance of precipitation is 30%."
+            },
+            {
+                "number": 6,
+                "name": "Thursday Night",
+                "startTime": "2018-05-03T18:00:00-04:00",
+                "endTime": "2018-05-04T06:00:00-04:00",
+                "isDaytime": false,
+                "temperature": 73,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "9 to 15 mph",
+                "windDirection": "E",
+                "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+                "shortForecast": "Partly Cloudy",
+                "detailedForecast": "Partly cloudy, with a low around 73. East wind 9 to 15 mph, with gusts as high as 20 mph."
+            },
+            {
+                "number": 7,
+                "name": "Friday",
+                "startTime": "2018-05-04T06:00:00-04:00",
+                "endTime": "2018-05-04T18:00:00-04:00",
+                "isDaytime": true,
+                "temperature": 84,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "9 to 13 mph",
+                "windDirection": "E",
+                "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                "shortForecast": "Sunny",
+                "detailedForecast": "Sunny, with a high near 84. East wind 9 to 13 mph."
+            },
+            {
+                "number": 8,
+                "name": "Friday Night",
+                "startTime": "2018-05-04T18:00:00-04:00",
+                "endTime": "2018-05-05T06:00:00-04:00",
+                "isDaytime": false,
+                "temperature": 72,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "5 to 12 mph",
+                "windDirection": "NE",
+                "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+                "shortForecast": "Mostly Clear",
+                "detailedForecast": "Mostly clear, with a low around 72. Northeast wind 5 to 12 mph."
+            },
+            {
+                "number": 9,
+                "name": "Saturday",
+                "startTime": "2018-05-05T06:00:00-04:00",
+                "endTime": "2018-05-05T18:00:00-04:00",
+                "isDaytime": true,
+                "temperature": 84,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "5 to 10 mph",
+                "windDirection": "NE",
+                "icon": "https://api.weather.gov/icons/land/day/rain_showers,20?size=medium",
+                "shortForecast": "Slight Chance Rain Showers",
+                "detailedForecast": "A slight chance of rain showers after 8am. Sunny, with a high near 84. Northeast wind 5 to 10 mph. Chance of precipitation is 20%."
+            },
+            {
+                "number": 10,
+                "name": "Saturday Night",
+                "startTime": "2018-05-05T18:00:00-04:00",
+                "endTime": "2018-05-06T06:00:00-04:00",
+                "isDaytime": false,
+                "temperature": 73,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "3 to 10 mph",
+                "windDirection": "NE",
+                "icon": "https://api.weather.gov/icons/land/night/rain_showers,30?size=medium",
+                "shortForecast": "Chance Rain Showers",
+                "detailedForecast": "A chance of rain showers. Mostly clear, with a low around 73. Chance of precipitation is 30%."
+            },
+            {
+                "number": 11,
+                "name": "Sunday",
+                "startTime": "2018-05-06T06:00:00-04:00",
+                "endTime": "2018-05-06T18:00:00-04:00",
+                "isDaytime": true,
+                "temperature": 86,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "2 to 8 mph",
+                "windDirection": "NE",
+                "icon": "https://api.weather.gov/icons/land/day/rain_showers,40?size=medium",
+                "shortForecast": "Chance Rain Showers",
+                "detailedForecast": "A chance of rain showers. Mostly sunny, with a high near 86. Chance of precipitation is 40%."
+            },
+            {
+                "number": 12,
+                "name": "Sunday Night",
+                "startTime": "2018-05-06T18:00:00-04:00",
+                "endTime": "2018-05-07T06:00:00-04:00",
+                "isDaytime": false,
+                "temperature": 74,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "1 to 8 mph",
+                "windDirection": "NE",
+                "icon": "https://api.weather.gov/icons/land/night/rain_showers,40/rain_showers,30?size=medium",
+                "shortForecast": "Chance Rain Showers",
+                "detailedForecast": "A chance of rain showers. Partly cloudy, with a low around 74. Chance of precipitation is 40%."
+            },
+            {
+                "number": 13,
+                "name": "Monday",
+                "startTime": "2018-05-07T06:00:00-04:00",
+                "endTime": "2018-05-07T18:00:00-04:00",
+                "isDaytime": true,
+                "temperature": 86,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "1 to 6 mph",
+                "windDirection": "NE",
+                "icon": "https://api.weather.gov/icons/land/day/rain_showers,40?size=medium",
+                "shortForecast": "Chance Rain Showers",
+                "detailedForecast": "A chance of rain showers. Mostly sunny, with a high near 86. Chance of precipitation is 40%."
+            },
+            {
+                "number": 14,
+                "name": "Monday Night",
+                "startTime": "2018-05-07T18:00:00-04:00",
+                "endTime": "2018-05-08T06:00:00-04:00",
+                "isDaytime": false,
+                "temperature": 74,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "windSpeed": "1 to 5 mph",
+                "windDirection": "E",
+                "icon": "https://api.weather.gov/icons/land/night/rain_showers,40?size=medium",
+                "shortForecast": "Chance Rain Showers",
+                "detailedForecast": "A chance of rain showers. Partly cloudy, with a low around 74. Chance of precipitation is 40%."
+            }
+        ]
+    }
+}

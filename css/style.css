@@ -212,6 +212,48 @@ footer p:last-child:after {
     font-style: italic;
 }
 
+/*
+for index.html
+*/
+ol li {
+  font-weight: lighter;
+}
+
+
+/*
+for people in space
+*/
+
+#people li {
+  color: grey;
+  font-weight: lighter;
+
+}
+
+/*
+for weather
+*/
+table, th, td {
+    border: 0.5px solid grey;
+    padding: 5px;
+    padding-right: 30px;
+}
+
+table {
+    /* width: 100%; */
+    border-collapse: collapse;
+    font-size: 11px;
+
+}
+
+table tr:first-child {
+  color:#B86F87;
+}
+
+th {
+    text-align: left;
+
+}
 
 /*
 for select content & zoom
@@ -261,8 +303,14 @@ svg {
   max-width: 90%;
 }
 
-path {
+/* path {
   fill: #dddddd;
   stroke:#FFFFFF;
   stroke-width:0.7316;
+} */
+
+/* for interactive-map */
+
+#chart img {
+  width: 300px;
 }

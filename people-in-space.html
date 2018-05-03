@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Visualization | Title of Example</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+
+  <body id="inner">
+
+    <header>
+      <h1>Data Visualization</h1>
+
+      <!--
+        An optional navigation ... you may want to include a link to
+        your personal portfolio, email, etc.
+      -->
+
+      <!-- <nav>
+        <ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav> -->
+
+    </header>
+
+    <main>
+
+      <!--
+        It is not ideal to exclude a menu from inner pages, but the
+        focus is on data visualization, not site design. This
+        'breadcrumb' approach will keep things simple while the
+        site added to week-to-week, but considers the necessity to
+        to swap out the nav on each page (for the completed one on
+        'index.html') and make minor modifications to 'style.css' to
+        create a more robust site nav once all examples are complete.
+      -->
+
+      <nav>
+        <p>&laquo; <a href="index.html">Return home</a></p>
+      </nav>
+
+      <section id="example">
+        <p class="message">You need a browser which supports CSS Grid! Why not <a href="https://browsehappy.com/">download</a> one which does?</p>
+
+        <h2>People In Space</h2>
+
+        <p id="intro"></p>
+
+        <ul id="people">
+
+        </ul>
+      </section>
+
+        <section id="writing">
+          <p>I used underscore.js for this exercise to isolate data from an API containing a list of the astronauts currently in space called astros.js.</p>
+          <p id="source"><a href= "http://api.open-notify.org/astros.json">Source: http://api.open-notify.org/astros.json</a></p>
+        </section>
+
+      </main>
+
+      <footer>
+        <p><a href="mailto:s.tong1@umiami.edu">Siyuan (Sharry) Tong</a></p>
+        <p>JMM 692: Interactive Data Visualization</p>
+        <p>Spring 2018</p>
+      </footer>
+
+        <script src="js/zepto.min.js"></script>
+        <script src="js/underscore.min.js"></script>
+        <script>
+
+          $.getJSON("http://api.open-notify.org/astros.json",
+            function(data) {
+// _(data.number).indexOf(2).number;
+              astronauts = data.people;
+              var number = data.number;
+              console.log(number)
+              document.getElementById("intro").append("There are currently " + number + " people in space:")
+
+
+              _(astronauts).each(
+               function(item) {
+                   // console.log(item.name)
+                   var list = document.createElement("li");
+                   list.append(item.name)
+                   list.append(" (" + item.craft + ")")
+                   document.getElementById("people").append(list);
+               }
+              )
+
+
+            }
+          );
+
+        </script>
+
+
+
+
+
+
+  </body>
+</html>
